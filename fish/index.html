@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+	<title>My Website</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 80px;
+			padding: 0 20px;
+			background-color: #000000;
+			color: #fff;
+		}
+		nav {
+			display: flex;
+			align-items: center;
+		}
+		nav ul {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav li {
+			margin-right: 20px;
+		}
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 5px;
+			transition: background-color 0.2s ease;
+		}
+		nav a:hover {
+			background-color: #000000;
+		}
+		main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: calc(100vh - 160px);
+			background-color: #000000;
+		}
+		main img {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 80px;
+			background-color: #000000;
+			color: #fff;
+		}
+		footer p {
+			margin: 0;
+			font-size: 16px;
+		}
+		footer button {
+			color: #fff;
+			background-color: transparent;
+			border: none;
+			font-size: 16px;
+			font-weight: bold;
+			margin-right: 20px;
+			cursor: pointer;
+			transition: opacity 0.2s ease;
+		}
+		footer button:hover {
+			opacity: 0.8;
+		}
+		footer a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 5px;
+			transition: background-color 0.2s ease;
+		}
+		footer a:hover {
+			background-color: #000000;
+		}
+		.left-sidebar {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 80px;
+			background-color:#C7F8FF;
+			color: #fff;
+			height: calc(160vh - 160px);
+			padding: 20px;
+			position: fixed;
+			left: 0;
+			top: 80px;
+		}
+		.left-sidebar a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			transition: background-color 0.2s ease;
+		}
+		.left-sidebar a:hover {
+			background-color: #000000;
+		}
+	</style>
+</head>
+<body>
+	<header style="background-color: pink">
+		 <img src="menu1.png" width="55px" style="background-color: transparent;">
+         <img src="logo-bk.png" width="250px" style="background-color: transparent; margin-left: -1000px;">
+
+	  <nav>
+			
+		<ul><li><a href="#" style="font-size: 24px;color: black">Home</a></li>
+				<li><a href="#" style="font-size: 24px;color: black">New</a></li>
+				<li><a href="#" style="font-size: 24px;color: black">About</a></li>
+				<li><a href="#" style="font-size: 24px;color: black">Language</a></li>
+			</ul>
+		</nav>
+	</header>
+<main>
+	<br>
+	<br>
+	<br>
+		<img src="photo1.jpg">
+		<img src="photo3.jpeg" style="display: none;">
+		<img src="photo4.jpg" style="display: none;">
+		<button onclick="prevImage()" style="color: black;"> &#10094;</button>
+        <button onclick="nextImage()" style="color: black; ">&#10095;</button>
+	</main>
+	
+	<script>
+		let currentImage = 0;
+		const images = document.querySelectorAll('main img');
+
+		function showImage() {
+			for (let i = 0; i < images.length; i++) {
+				if (i === currentImage) {
+					images[i].style.display = 'block';
+				} else {
+					images[i].style.display = 'none';
+				}
+			}
+		}
+
+		function nextImage() {
+			currentImage++;
+			if (currentImage >= images.length) {
+				currentImage = 0;
+			}
+			showImage();
+		}
+
+		function prevImage() {
+			currentImage--;
+			if (currentImage < 0) {
+				currentImage = images.length - 1;
+			}
+			showImage();
+		}
+
+		showImage();
+	</script>
+<footer style="background-color: #000000">
+		<div class="left-sidebar">
+			<a href="#"><img src="line.png" width="50px" style="background-color: transparent;"></a>
+			<a href="#"><img src="fb.png" width="50px" style="background-color: transparent;"></a>
+			<a href="#"><img src="ig.png" width="50px" style="background-color: transparent;"></a>
+			<a href="#"><img src="tw.png" width="50px" style="background-color: transparent;"></a>
+		</div>
+		
+</footer>
+	<img src="data.jpg" width="500px" style="margin-left: 150px;">
+
+</body>
+</html>
+			
